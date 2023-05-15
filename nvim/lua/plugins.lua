@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
     {'L3MON4D3/LuaSnip'},
    }
   }
+
   local lsp = require('lsp-zero').preset({})
 
   lsp.on_attach(function(client, bufnr)
@@ -49,6 +50,6 @@ return require('packer').startup(function(use)
   use({ 'rose-pine/neovim', as = 'rose-pine' })
   vim.cmd('colorscheme rose-pine')
 
-	use 'christoomey/vim-tmux-navigator'
-
+  use 'christoomey/vim-tmux-navigator' -- not used for now as I don't use tmux
+  use 'tpope/vim-commentary'
 end)
