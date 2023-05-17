@@ -84,10 +84,10 @@ _G.packer_plugins = {
     path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["lsp-format.nvim"] = {
+  ["ctrlp.vim"] = {
     loaded = true,
-    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
-    url = "https://github.com/lukas-reineke/lsp-format.nvim"
+    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/ctrlp.vim",
+    url = "https://github.com/ctrlpvim/ctrlp.vim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -124,20 +124,15 @@ _G.packer_plugins = {
     path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  ["plenary.nvim"] = {
-    loaded = true,
-    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/plenary.nvim",
-    url = "https://github.com/nvim-lua/plenary.nvim"
-  },
   ["rose-pine"] = {
     loaded = true,
     path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
-  ["telescope.nvim"] = {
+  ["vim-commentary"] = {
     loaded = true,
-    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/telescope.nvim",
-    url = "https://github.com/nvim-telescope/telescope.nvim"
+    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-tmux-navigator"] = {
     loaded = true,

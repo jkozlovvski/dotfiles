@@ -14,15 +14,9 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
 vim.keymap.set({ "n", "x" }, "cp", '"+y')
 vim.keymap.set({ "n", "x" }, "cv", '"+p')
 vim.keymap.set({ "n", "x" }, "x", '"_x')
-vim.keymap.set("", "<leader>/", ":vsplit<CR><C-w>l")
 
--- mappings for telescope fuzzy finding
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>ps', function()
-	builtin.grep_string({search = vim.fn.input("Grep > ")});
-end)
+vim.keymap.set("", "<leader>/", ":vsplit<CR><C-w>l")
+vim.keymap.set('', '<Space>-', ':split<CR><C-w>j')
 
 -- mappings for LSP
 vim.api.nvim_create_autocmd('LspAttach', {

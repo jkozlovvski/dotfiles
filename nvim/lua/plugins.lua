@@ -3,11 +3,6 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
-
 	use 'nvim-treesitter/nvim-treesitter'
 
 	require'nvim-treesitter.configs'.setup {
@@ -52,4 +47,5 @@ return require('packer').startup(function(use)
 
   use 'christoomey/vim-tmux-navigator' -- not used for now as I don't use tmux
   use 'tpope/vim-commentary'
+  use 'ctrlpvim/ctrlp.vim'
 end)
