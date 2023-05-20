@@ -1,10 +1,11 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
 
+  use 'wbthomason/packer.nvim'
 	use 'nvim-treesitter/nvim-treesitter'
 
+  -- tree-sitter config
 	require'nvim-treesitter.configs'.setup {
 		ensure_installed = { "c", "lua", "vim", "vimdoc", "query"},
 		sync_install = false,
@@ -15,37 +16,101 @@ return require('packer').startup(function(use)
 		},
 	}
 
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    requires = {
-      {'neovim/nvim-lspconfig'},
-      {
-      'williamboman/mason.nvim',
-      run = function()
-        pcall(vim.cmd, 'MasonUpdate')
-      end,
-    },
-    {'williamboman/mason-lspconfig.nvim'},
-    {'hrsh7th/nvim-cmp'},
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'L3MON4D3/LuaSnip'},
-   }
-  }
+  use 'neovim/nvim-lspconfig' -- configs for LSP servers
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'L3MON4D3/LuaSnip' -- snippets
+  use 'hrsh7th/nvim-cmp' -- autocompletion 
 
-  local lsp = require('lsp-zero').preset({})
+  local function SetupLSP()
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    local lspconfig = require('lspconfig')
 
-  lsp.on_attach(function(client, bufnr)
-    lsp.default_keymaps({buffer = bufnr})
-  end)
+    -- autocomplete config
+    local cmp = require('cmp')
+    local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
 
-  require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-  lsp.setup()
+    cmp.setup({
+      sources = {
+        {name = 'nvim_lsp'},
+      },
+      mapping = {
+        ['<C-y>'] = cmp.mapping.confirm({select = true}),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),
+        ['<Up>'] = cmp.mapping.select_prev_item(cmp_select_opts),
+        ['<Down>'] = cmp.mapping.select_next_item(cmp_select_opts),
+        ['<C-p>'] = cmp.mapping(function()
+          if cmp.visible() then
+            cmp.select_prev_item(cmp_select_opts)
+          else
+            cmp.complete()
+          end
+        end),
+        ['<C-n>'] = cmp.mapping(function()
+          if cmp.visible() then
+            cmp.select_next_item(cmp_select_opts)
+          else
+            cmp.complete()
+          end
+        end),
+      },
+      snippet = {
+        expand = function(args)
+          require('luasnip').lsp_expand(args.body)
+        end,
+      },
+      window = {
+        documentation = {
+          max_height = 15,
+          max_width = 60,
+        }
+      },
+      formatting = {
+        fields = {'abbr', 'menu', 'kind'},
+        format = function(entry, item)
+          local short_name = {
+            nvim_lsp = 'LSP',
+            nvim_lua = 'nvim'
+          }
+
+          local menu_name = short_name[entry.source.name] or entry.source.name
+          item.menu = string.format('[%s]', menu_name)
+          return item
+        end,
+      },
+    })
+
+
+    -- Adding capacilities supported by nvim-cmp
+    for _, lsp in ipairs({'clangd', 'rust_analyzer', 'pylsp', 'lua_ls'}) do
+      lspconfig[lsp].setup {
+        capabilities = capabilities,
+     }
+    end
+
+    -- python setup
+    -- https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
+    lspconfig.pylsp.setup{
+      settings = {
+        pylsp = {
+          plugins = {
+            pycodestyle = {
+              ignore = {'W391'},
+              maxLineLength = 120
+            }
+          }
+        }
+      }
+    }
+
+  end
+
+  SetupLSP()
 
   use({ 'rose-pine/neovim', as = 'rose-pine' })
   vim.cmd('colorscheme rose-pine')
 
-  use 'christoomey/vim-tmux-navigator' -- not used for now as I don't use tmux
-  use 'tpope/vim-commentary'
-  use 'ctrlpvim/ctrlp.vim'
+  use 'tpope/vim-commentary' -- easy commenting
+  use 'ctrlpvim/ctrlp.vim' -- fuzzy finder 
 end)
