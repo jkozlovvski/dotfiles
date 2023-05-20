@@ -11,4 +11,4 @@ vim.opt.updatetime = 300
 
 vim.opt.scrolloff = 8
 vim.opt.autochdir = true
-vim.opt.signcolumn= 'yes'
+vim.opt.signcolumn= 'no'

@@ -89,7 +89,7 @@ return require('packer').startup(function(use)
      }
     end
 
-    -- python setup
+    -- python lsp setup, TODO: make it find pyproject or flake and then fallback for my default formatting
     -- https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
     lspconfig.pylsp.setup{
       settings = {
@@ -103,13 +103,17 @@ return require('packer').startup(function(use)
         }
       }
     }
-
   end
 
   SetupLSP()
 
+  -- coloschemes
   use({ 'rose-pine/neovim', as = 'rose-pine' })
-  vim.cmd('colorscheme rose-pine')
+  use({ 'markvincze/panda-vim', as = 'panda' })
+  use({ 'kaicataldo/material.vim', as = 'material' })
+
+  -- my current colorscheme
+  vim.cmd('colorscheme material')
 
   use 'tpope/vim-commentary' -- easy commenting
   use 'ctrlpvim/ctrlp.vim' -- fuzzy finder 
