@@ -111,6 +111,7 @@ return require('packer').startup(function(use)
   use({ 'rose-pine/neovim', as = 'rose-pine' })
   use({ 'markvincze/panda-vim', as = 'panda' })
   use({ 'kaicataldo/material.vim', as = 'material' })
+  use({ 'folke/tokyonight.nvim', as = 'tokyonight' })
 
   -- my current colorscheme
   vim.cmd('colorscheme material')
