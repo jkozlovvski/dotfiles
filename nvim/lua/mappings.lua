@@ -36,3 +36,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+
+-- mapping for vim-bbye
+vim.keymap.set('n', '<leader>bc', '<cmd>Bdelete<CR>')

@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
 		},
 	}
 
+
   use 'neovim/nvim-lspconfig' -- configs for LSP servers
   use 'hrsh7th/cmp-nvim-lsp'
   use 'L3MON4D3/LuaSnip' -- snippets
@@ -28,7 +29,6 @@ return require('packer').startup(function(use)
     -- autocomplete config
     local cmp = require('cmp')
     local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
-
     cmp.setup({
       sources = {
         {name = 'nvim_lsp'},
@@ -104,7 +104,6 @@ return require('packer').startup(function(use)
       }
     }
   end
-
   SetupLSP()
 
   -- coloschemes
@@ -117,5 +116,8 @@ return require('packer').startup(function(use)
   vim.cmd('colorscheme material')
 
   use 'tpope/vim-commentary' -- easy commenting
+  use 'tpope/vim-repeat' -- repeating plugin commands with '.'
   use 'ctrlpvim/ctrlp.vim' -- fuzzy finder 
+  use 'moll/vim-bbye' -- closing buffer without closing window
+  use 'tpope/vim-surround' -- surrounding text
 end)
