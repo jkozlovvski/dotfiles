@@ -14,6 +14,7 @@ vim.opt.autochdir = true
 vim.opt.signcolumn= 'no'
 
 vim.opt.showmode = false
+vim.opt.shell='/opt/homebrew/bin/fish'
 
 -- show where nvim looks for packages
 function show_pack_paths()
