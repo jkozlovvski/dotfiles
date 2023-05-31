@@ -13,6 +13,7 @@ vim.opt.scrolloff = 8
 vim.opt.autochdir = true
 vim.opt.signcolumn= 'no'
 
+vim.opt.showmode = false
 
 -- show where nvim looks for packages
 function show_pack_paths()

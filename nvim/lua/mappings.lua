@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("", "<leader>-", ":split<CR><C-w>j")
 vim.keymap.set("", "<leader>c", "<C-w>c")
 
 vim.keymap.set("", "<C-h>", "<C-w>h")
@@ -37,5 +36,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- mapping for vim-bbye
-vim.keymap.set('n', '<leader>bc', '<cmd>Bdelete<CR>')

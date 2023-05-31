@@ -104,6 +104,7 @@ return require('packer').startup(function(use)
       }
     }
   end
+
   SetupLSP()
 
   -- coloschemes
@@ -117,7 +118,37 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-commentary' -- easy commenting
   use 'tpope/vim-repeat' -- repeating plugin commands with '.'
-  use 'ctrlpvim/ctrlp.vim' -- fuzzy finder 
-  use 'moll/vim-bbye' -- closing buffer without closing window
   use 'tpope/vim-surround' -- surrounding text
+
+  use 'nvim-tree/nvim-web-devicons'
+  use 'ctrlpvim/ctrlp.vim' -- fuzzy finder 
+  vim.g.ctrlp_clear_cache_on_exit = 0
+
+  use 'nvim-lualine/lualine.nvim' -- fancy status bar
+  require('lualine').setup({
+    options = {
+      theme = 'material',
+      icons_enabled = true,
+      component_separators = '|',
+      section_separators = '',
+      disabled_filetypes = {
+        statusline = {'NvimTree'}
+      }
+    },
+  })
+
+  use 'pacha/vem-tabline' -- tabs
+  -- Easy buffer switching
+  vim.keymap.set('n', '<D-j>', '<Plug>vem_prev_buffer-')
+  vim.keymap.set('n', '<D-k>', '<Plug>vem_next_buffer-')
+  vim.keymap.set('t', '<D-j>', [[<C-\><C-n><Plug>vem_prev_buffer-]])
+  vim.keymap.set('t', '<D-k>', [[<C-\><C-n><Plug>vem_next_buffer-]])
+
+  -- Easy buffer repositioning
+  vim.keymap.set('n', '<D-C-j>', '<Plug>vem_move_buffer_left-')
+  vim.keymap.set('n', '<D-C-k>', '<Plug>vem_move_buffer_right-')
+
+  -- <D-c> to close buffer
+  use 'moll/vim-bbye' -- close buffer without closing window
+  vim.keymap.set('n', '<D-c>', '<cmd>Bdelete!<CR>')
 end)

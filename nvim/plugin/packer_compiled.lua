@@ -89,20 +89,15 @@ _G.packer_plugins = {
     path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/ctrlp.vim",
     url = "https://github.com/ctrlpvim/ctrlp.vim"
   },
-  ["lsp-zero.nvim"] = {
+  ["lualine.nvim"] = {
     loaded = true,
-    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
-    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["mason-lspconfig.nvim"] = {
+  material = {
     loaded = true,
-    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
-    url = "https://github.com/williamboman/mason-lspconfig.nvim"
-  },
-  ["mason.nvim"] = {
-    loaded = true,
-    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/mason.nvim",
-    url = "https://github.com/williamboman/mason.nvim"
+    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/material",
+    url = "https://github.com/kaicataldo/material.vim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -119,25 +114,55 @@ _G.packer_plugins = {
     path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  panda = {
+    loaded = true,
+    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/panda",
+    url = "https://github.com/markvincze/panda-vim"
   },
   ["rose-pine"] = {
     loaded = true,
     path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
+  tokyonight = {
+    loaded = true,
+    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/tokyonight",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vem-tabline"] = {
+    loaded = true,
+    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/vem-tabline",
+    url = "https://github.com/pacha/vem-tabline"
+  },
+  ["vim-bbye"] = {
+    loaded = true,
+    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/vim-bbye",
+    url = "https://github.com/moll/vim-bbye"
+  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
-  ["vim-tmux-navigator"] = {
+  ["vim-repeat"] = {
     loaded = true,
-    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
-    url = "https://github.com/christoomey/vim-tmux-navigator"
+    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/Users/kozlovvski/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   }
 }
 
