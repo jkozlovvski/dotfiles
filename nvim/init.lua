@@ -1,4 +1,3 @@
-require('plugins')
-require('mappings')
-require('global')
-require('gui')
+require('config.mappings')
+require('config.gui')
+require('config.lazy')
