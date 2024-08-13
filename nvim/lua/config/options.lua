@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 vim.opt.number = true
@@ -17,3 +16,6 @@ vim.opt.autochdir = true
 vim.opt.signcolumn= 'no'
 
 vim.opt.showmode = false
+
+vim.cmd.colorscheme = "catppuccin"
+

@@ -1,12 +1,5 @@
-return {
-  'nvim-treesitter/nvim-treesitter', 
-  build =  ':TSUpdate',
-  config = function()
-    local config = require("nvim-treesitter.configs")
-    config.setup({
-      ensure_installed = {"lua", "javascript", "scala", "python"},
-      highlight = {enabled = true},
-      indent = {enabled = true},
-    })
-  end
+require("nvim-treesitter.configs").setup {
+    ensure_installed = {"lua", "javascript", "scala", "python", "java", "vimdoc", "luadoc", "vim", "lua", "markdown"},
+    highlight = {enabled = true},
+    indent = {enabled = true},
 }
