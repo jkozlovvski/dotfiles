@@ -11,12 +11,16 @@ require "paq" {
     -- LSP
     { 'echasnovski/mini.completion' },
     { 'neovim/nvim-lspconfig' },
-
-    -- plenary 
-    { "nvim-lua/plenary.nvim" },
-
-    -- metals
-    -- TODO: FIX
     { "scalameta/nvim-metals" },
+
+    -- dependencies 
+    { "nvim-lua/plenary.nvim" },
+    { "nvim-tree/nvim-web-devicons" },
+
+    -- file menager 
+    { "ibhagwan/fzf-lua" },
+    { "echasnovski/mini.icons", version = false },
+    { "echasnovski/mini.files", version = false },
+    { "otavioschwanck/arrow.nvim"}
 }
 
