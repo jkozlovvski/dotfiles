@@ -5,9 +5,11 @@ require "paq" {
     -- tree-sitter
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 
+    -- colorschemes
     -- { 'savq/melange-nvim', build = vim.cmd.colorscheme("melange")},
-    { "catppuccin/nvim", name = "catppuccin", build = vim.cmd.colorscheme("catppuccin-latte") },
-
+    -- { "catppuccin/nvim", name = "catppuccin"},
+    { "rose-pine/neovim", name = "rose-pine" },
+    
     -- LSP
     { 'echasnovski/mini.completion' },
     { 'neovim/nvim-lspconfig' },
@@ -22,5 +24,5 @@ require "paq" {
     { "echasnovski/mini.icons", version = false },
     { "echasnovski/mini.files", version = false },
     { "otavioschwanck/arrow.nvim"}
-}
 
+}
