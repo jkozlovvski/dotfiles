@@ -5,4 +5,5 @@ if is_dark then
   vim.cmd("colorscheme rose-pine-moon")
 else
   vim.cmd("colorscheme rose-pine-dawn")
+  vim.cmd("set guicursor=n-v-c:block-Cursor/lCursor,i-ci:ver25-Cursor/lCursor")
 end
