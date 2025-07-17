@@ -23,6 +23,7 @@ require "paq" {
     { "ibhagwan/fzf-lua" },
     { "echasnovski/mini.icons", version = false },
     { "echasnovski/mini.files", version = false },
-    { "otavioschwanck/arrow.nvim"}
+    { "otavioschwanck/arrow.nvim"},
+    {'kevinhwang91/nvim-bqf', ft = 'qf'},
 
 }

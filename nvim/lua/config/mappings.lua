@@ -16,4 +16,20 @@ vim.keymap.set({ "n", "x" }, "x", '"_x')
 vim.keymap.set("", "<leader>/", ":vsplit<CR><C-w>l")
 
 vim.keymap.set('', '<Space>-', ':split<CR><C-w>j')
-vim.opt.shell = "/bin/zsh"
+vim.opt.shell = "/opt/homebrew/bin/nu"
+
+vim.keymap.set("", "gd", function()
+  vim.lsp.buf.definition()
+end)
+
+vim.keymap.set("", "fr", function()
+  vim.lsp.buf.references()
+end)
+
+vim.keymap.set("", "sd", function()
+  vim.lsp.buf.hover()
+end)
+
+vim.keymap.set("", "rn", function()
+  vim.lsp.buf.rename()
+end)
